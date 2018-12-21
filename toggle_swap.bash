@@ -2,8 +2,6 @@
 #author: unknown
 #clears swap when free memory exceeds swap
 
-#!/bin/bash
-
 # Make sure that all text is parsed in the same language
 export LC_MESSAGES=en_US.UTF-8
 export LC_COLLATE=en_US.UTF-8
