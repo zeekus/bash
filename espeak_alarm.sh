@@ -123,7 +123,7 @@ fi
 
 #######################################
 ### You may be asking why I didn't use sleep.
-### I wanted to use time rather than sleep.
+### I wanted to use the daate command rather than sleep.
 ### This was more of an exercise of using the date command.
 ### Using sleep $(( 60 * $mins)  would have been much more
 ### efficient then using this method.
