@@ -8,7 +8,7 @@
 
 debug_state=0
 debug_state=1
-use_seconds=1 #use seconds instead of minutes
+use_seconds=0 #use seconds instead of minutes
 
 ##################
 check_for_espeak() {
