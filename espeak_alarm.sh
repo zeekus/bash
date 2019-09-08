@@ -7,18 +7,18 @@
 #######################################
 
 debug_state=0
-#debug_state=1
-use_seconds=0 #use seconds instead of minutes
+debug_state=1
+use_seconds=1 #use seconds instead of minutes
 
 ##################
 check_for_espeak() {
 ##################
    test -e "/usr/bin/espeak"
    if [ $? == 0 ] ; then
-     printf "We found espeak. running '$0'\n"
+     echo "We found espeak. running '$0'"
    else
-     printf "Sorry. No espeak found.\n"
-     printf "This program requires the espeak binary to run. Exiting...\n"
+     echo "Sorry. No espeak found.\n"
+     echo "This program requires the espeak binary to run. Exiting..."
      exit 2
    fi
 }
@@ -103,21 +103,21 @@ else
     time_at_end_of_alarm=$(date --date="+$alarm minutes" +"%s")
     hr_time_at_end_of_alarm=$(date --date="+$alarm minutes" +"%l:%M:%S")
   else
-    printf "...adding 30 seconds to non standard alarm\n"
+    echo "...adding 30 seconds to non standard alarm"
     time_at_end_of_alarm=$(date --date="+$alarm minutes +30 seconds" +"%s")
     hr_time_at_end_of_alarm=$(date --date="+$alarm minutes +30 seconds" +"%l:%M:%S")
   fi
 fi
 
 if [ $debug_state -eq 1 ] ;then
- printf "Debug: the alarm is set for '$alarm'\n" 
+ echo "Debug: the alarm is set for '$alarm'" 
  myt=$(date +"%s")
- printf "Debug: the current time is '$myt'\n"
- printf "Debug: The end time is '$time_at_end_of_alarm'\n"
+ echo "Debug: the current time is '$myt'"
+ echo "Debug: The end time is '$time_at_end_of_alarm'"
  secs=$(( $time_at_end_of_alarm - $current_time ))
  mins=$(( ($time_at_end_of_alarm - $current_time) /60 ))
- printf "Debug: checking math difference is $secs seconds\n"
- printf "Debug: checking math difference is $mins mins\n"
+ echo "Debug: checking math difference is $secs seconds"
+ echo "Debug: checking math difference is $mins mins"
 fi
 
 
