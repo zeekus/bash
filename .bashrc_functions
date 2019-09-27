@@ -1,0 +1,16 @@
+# User specific aliases and functions
+
+most_active_ip () {
+ echo "Most active ip at :" `date`
+ netstat -nat | grep -i :443 | awk '{print $5}' | grep -v "*" | sed -e s/:.*//g | sort | uniq -c | sort -n
+}
+
+types_of_connections_443 () {
+ echo "types of connections on 443:" `date`
+ netstat -nat | grep -i :443 | awk '{print $6}' | sort | uniq -c | sort -n
+}
+
+most_time_waits () {
+ echo "timewaits at " `date`
+ netstat -nat | grep -i :443 | grep -i time | awk '{print $5}' | grep -v "*" | sed -e s/:.*//g | sort | uniq -c | sort -n
+}
