@@ -8,6 +8,7 @@ Filename | Description
 ------------ | -------------
 .bashrc_functions  | tool: to exend bash at work by adding functions to .bash_rc
 espeak_alarm.sh    | play tool: an alarm program to keep me productive
+espeak_alarmv2.sh  | play tool: an alarm program to keep me productive. I guess this uses sleep instead of time.
 firewall_helper.sh | tool : an attempt to make create firewall rules from a bash script
 ksar_sar.sh        | tool : bare bones tool to convert 31 sar files in a format ksar will process
 toggle_swap.bash   | tool: swap toggle. not my code.
