@@ -14,3 +14,21 @@ most_time_waits () {
  echo "timewaits at " `date`
  netstat -nat | grep -i :443 | grep -i time | awk '{print $5}' | grep -v "*" | sed -e s/:.*//g | sort | uniq -c | sort -n
 }
+
+top_20_hiters() {
+ echo "top 20 hitters from logs today `date +%d/%b/%Y`"
+ sudo cat /var/log/live.access.log | grep `date +%d/%b/%Y` | awk {'print $1'} | sort -n | uniq -c | sort -n | tail -20
+} 
+
+getsar () {
+#get sar logs 
+for x in $(seq 31)
+ do
+ printf "$x\n"
+ if [ $x -lt 10 ]; then
+   LC_ALL=C sar -A -f /var/log/sa/sa0$x > sa0$x.txt
+ else
+   LC_ALL=C sar -A -f /var/log/sa/sa$x > sa$x.txt
+ fi
+ done
+}
