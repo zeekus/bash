@@ -1,4 +1,7 @@
 # User specific aliases and functions
+count_http () {
+   ps aux| grep -i http| grep -v ps | wc -l
+}
 
 most_active_ip () {
  echo "Most active ip at connecting to TCP port 443 :" `date`
@@ -18,7 +21,7 @@ most_time_waits () {
 
 top_20_hiters() {
  echo "top 20 hitters from logs today `date +%d/%b/%Y`"
- sudo cat /var/log/live.access.log | grep `date +%d/%b/%Y` | awk {'print $1'} | sort -n | uniq -c | sort -n | tail -20
+  cat /var/log/httpd/live.access.log | grep `date +%d/%b/%Y` | awk {'print $1'} | sort -n | uniq -c | sort -n | tail -20
 } 
 
 getsar () {
