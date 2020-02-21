@@ -49,6 +49,6 @@ echo "yesterday in apache log format"
 yesterday=`date +%d/%b/%Y -d -yesterday`
 echo $yesterday
 
-echo "yesterday in shell format for courts document home dirs"
+echo "yesterday in shell format for document home dirs CM/ECF"
 yesterday=`date +%Y%m%d -d -yesterday`
 echo $yesterday
