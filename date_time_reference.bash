@@ -1,6 +1,9 @@
 #!/bin/bash
 #description: date time commands and thier syntax
 
+TZ=America/New_York date
+Tue Feb 25 07:16:41 EST 2020
+
 date --date "+$(( 6 * 60 )) minutes" +"%D %l:%M:%S"
 
 date -d 'now + 3 weeks'
