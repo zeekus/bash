@@ -18,6 +18,11 @@ most_time_waits () {
  netstat -nat | grep -i :443 | grep -i time | awk '{print $5}' | grep -v "*" | sed -e s/:.*//g | sort | uniq -c | sort -n
 }
 
+backup_root_history () {
+   mydate=`date +%d_%b_%Y_%H%M`
+   sudo cp /root/.bash_history ~/root_history_$mydate
+}
+
 
 top_20_hiters() {
  echo "top 20 hitters from logs today `date +%d/%b/%Y`"
