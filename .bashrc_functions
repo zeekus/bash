@@ -23,6 +23,13 @@ backup_root_history () {
    sudo cp /root/.bash_history ~/root_history_$mydate
 }
 
+load_ssh_agent() {
+  ssh-add &>/dev/null || eval `ssh-agent` &>/dev/null  # start ssh-agent if not present
+  [ $? -eq 0 ] && {                                     # ssh-agent has started
+   ssh-add ~/.ssh/id_dsa &>/dev/null        # Load key 1
+   ssh-add ~/.ssh/id_rsa &>/dev/null        # Load key 2
+ }
+}
 
 top_20_hiters() {
  echo "top 20 hitters from logs today `date +%d/%b/%Y`"
