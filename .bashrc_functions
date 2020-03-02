@@ -8,6 +8,12 @@ most_active_ip () {
  netstat -nat | grep -i :443 | awk '{print $5}' | grep -v "*" | sed -e s/:.*//g | sort | uniq -c | sort -n
 }
 
+last_hour() {
+   echo "find files modifed in last hour in $PWD"
+   srch_dir="$PWD"
+   find $srch_dir -type f -mmin -60
+}
+
 types_of_connections_443 () {
  echo "types of connections on TCP port 443:" `date`
  netstat -nat | grep -i :443 | awk '{print $6}' | sort | uniq -c | sort -n
