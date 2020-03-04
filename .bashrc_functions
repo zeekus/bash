@@ -69,3 +69,12 @@ for x in $(seq 31)
  fi
  done
 }
+
+list_function_names() {
+  dirty_list_of_functions=`grep "()" $HOME/.bashrc|grep -v grep| grep -v sed`
+  clean_list=`(echo $dirty_list_of_functions| sed 's/[[:space:]]//g' | sed 's/(){/ /g')`
+  for function_name in $clean_list
+    do
+      echo $function_name
+    done
+}
