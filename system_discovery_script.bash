@@ -1,5 +1,6 @@
 #!/bin/bash
 #filename: system_discovery_script.bash
+
 myhost=`uname -a | awk {'print $2'}`
 
 function my_header {
@@ -11,40 +12,36 @@ function my_header {
     echo
 }
 
-RPM_PATH="/usr/bin/rpm"
-IP="/usr/sbin/ip"
-HOSTS="/etc/hosts"
+REDHAT=0
 
-TITLE="PACKAGES INSTALLED"
-
-if [ -e $RPM_PATH ]; then
-  P_COUNT=`rpm -qa| wc -l`
-  my_header
-  $RPM_PATH -qai
-  TITLE="$P_COUNT $TITLE"
-  my_header
+if [ -e /etc/redhat-release ];then
+   TITLE="RED HAT RELEASE"
+   REDHAT=1 #set redhat machine
+   my_header
+   cat /etc/redhat-release
 fi
 
-
+IP="/usr/sbin/ip"
+TITLE="IP ROUTE "
+my_header
 if [ -e $IP ]; then
-  TITLE="IP ROUTE "
-  my_header
   $IP route
   TITLE="IP ADDRESS"
   my_header
   $IP addr
+else 
+  echo "*old machine*"
+  netstat -r
+  TITLE="IP ADDRESS"
+  my_header
+  /sbin/ifconfig -a
 fi
 
+HOSTS="/etc/hosts"
 if [ -e $HOSTS ]; then
    TITLE="HOSTS FILE"
    my_header
    cat $HOSTS
-fi
-
-if [ -e /etc/redhat-release ];then
-   TITLE="RED HAT RELEASE"
-   my_header
-   cat /etc/redhat-release
 fi
 
 TITLE="DISK SPACE"
@@ -65,3 +62,16 @@ ps aux
 
 TITLE="MESSAGES"
 dmesg
+
+
+TITLE="PACKAGES INSTALLED"
+
+if [ $REDHAT -eq 1 ]; then
+  P_COUNT=`rpm -qa| wc -l`
+  my_header
+  rpm -qai
+  #$RPM_PATH -qai
+  TITLE="$P_COUNT $TITLE"
+  my_header
+fi
+
