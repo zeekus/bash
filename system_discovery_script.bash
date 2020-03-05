@@ -1,11 +1,12 @@
 #!/bin/bash
 #filename: system_discovery_script.bash
+myhost=`uname -a | awk {'print $2'}`
 
 function my_header {
     echo
     echo
     echo "*************************************"
-    echo $TITLE
+    echo $TITLE $myhost
     echo "*************************************"
     echo
 }
