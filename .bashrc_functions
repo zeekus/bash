@@ -30,6 +30,8 @@ backup_root_history () {
 }
 
 load_ssh_keys_into_agent() {
+  echo "start ssh agent"
+  eval `ssh-agent -s`
   echo "loading ssh keys"
   ssh_path="$HOME/.ssh"
   echo "ssh_path is $ssh_path"
