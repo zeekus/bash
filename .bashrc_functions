@@ -4,7 +4,7 @@ count_http () {
 }
 
 myip () {
-  myip=`ip addr | grep eth0 | grep inet | awk {'print $2'} | sed 's/\/24//g'
+  myip=$(ip addr | grep eth0 | grep inet | awk {'print $2'} | sed 's/\/24//g')
   echo $myip
 }
 
