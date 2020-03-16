@@ -3,6 +3,11 @@ count_http () {
    ps aux| grep -i http| grep -v ps | wc -l
 }
 
+myip () {
+  myip=`ip addr | grep eth0 | grep inet | awk {'print $2'} | sed 's/\/24//g'
+  echo $myip
+}
+
 most_active_ip () {
  echo "Most active ip at connecting to TCP port 443 :" `date`
  netstat -nat | grep -i :443 | awk '{print $5}' | grep -v "*" | sed -e s/:.*//g | sort | uniq -c | sort -n
