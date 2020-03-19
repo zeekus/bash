@@ -25,9 +25,14 @@ types_of_connections_443 () {
 }
 
 most_time_waits () {
- echo "TCP timewaits on port 443 at " `date`
- netstat -nat | grep -i :443 | grep -i time | awk '{print $5}' | grep -v "*" | sed -e s/:.*//g | sort | uniq -c | sort -n
-}
+ ports="80 443"
+ for port in $ports
+    do
+      echo "TCP timewaits on port $port at " `date` 
+      netstat -nat | grep -i :$port | grep -i time | awk '{print $5}' | grep -v "*" | sed -e s/:.*//g | sort | uniq -c | sort -n
+    done
+}           
+
 
 backup_root_history () {
    mydate=`date +%d_%b_%Y_%H%M`
