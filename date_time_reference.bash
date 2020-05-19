@@ -55,3 +55,6 @@ echo $yesterday
 echo "yesterday in shell format for document home dirs CM/ECF"
 yesterday=`date +%Y%m%d -d -yesterday`
 echo $yesterday
+
+#for logs:
+date +%m_%d_%Y_%H%M
