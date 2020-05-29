@@ -1,5 +1,5 @@
 #!/bin/bash
-#file: pdk_conver_puppet.bash
+#file: pdk_convert_batch.bash
 #description: converts puppet modules in current directory to use PDK stuff. Normally, it just addes meta data. Note user still needs to press 'Y' when run.
 #use at your own risk
 #author: Theodore Knab
