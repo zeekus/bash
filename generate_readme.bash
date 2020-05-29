@@ -33,7 +33,8 @@ for myfile in $filelist
   do
   echo $myfile
   my_desc=$(grep -i "^#descr" $myfile)
-  my_desc=`echo "${my_desc//\#}"` #remove # symbol
+  my_desc=`echo "${my_desc//\#}"` #remove # 
+  my_desc=`echo $my_desc | sed s/d.*://g` #removes word description in all its varieties 
   my_lang=$(head -1 $myfile| sed -e s/*//g )
   if [ $myfile != $filename ]; then
     echo "$myfile   |  $my_desc | $my_lang " >> $filename
