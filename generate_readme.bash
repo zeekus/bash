@@ -35,7 +35,9 @@ for myfile in $filelist
   my_desc=$(grep -i "^#descr" $myfile)
   my_desc=`echo "${my_desc//\#}"` #remove # symbol
   my_lang=$(head -1 $myfile| sed -e s/*//g )
-  echo "$myfile   |  $my_desc | $my_lang " >> $filename
+  if [ $myfile != $filename ]; then
+    echo "$myfile   |  $my_desc | $my_lang " >> $filename
+  fi 
   done
 
 

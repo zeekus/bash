@@ -1,5 +1,6 @@
 #!/bin/bash
 #author: unknown
+#descritpion: cleans swap in Linux kernel
 #clears swap when free memory exceeds swap
 
 # Make sure that all text is parsed in the same language

@@ -1,5 +1,6 @@
 #!/bin/bash
 #filename: system_discovery_script.bash
+#desciption: basis system discovery script
 
 myhost=`uname -a | awk {'print $2'}`
 

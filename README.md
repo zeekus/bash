@@ -12,6 +12,5 @@ firewall_helper.sh   |  description: iptables helper aka firewall helper | #!/bi
 generate_readme.bash   |  description: generates a readme.md file by scanning files in directory | #!/bin/bash 
 ksar_sar.bash   |  description: get sar logs in LC_ALL=C format so they work. | #!/bin/bash 
 pdk_convert_batch.bash   |  description: creates the meta files PDK likes in the existing puppet modules in current directory | #!/bin/bash 
-README.md   |   | Most of it is just for fun.  
 system_discovery_script.bash   |   | #!/bin/bash 
-toggle_swap.bash   |   | #!/bin/bash 
+toggle_swap.bash   |  descritpion: cleans swap in Linux kernel | #!/bin/bash 
