@@ -1,16 +1,17 @@
-
-This is my bash stuff.
-
 Most of it is just for fun.
-There are some tools for work.
 
-Filename | Description 
------------- | -------------
-.bashrc_functions  | tool: to exend bash at work by adding functions to .bash_rc
-espeak_alarm.sh    | play tool: an alarm program to keep me productive
-espeak_alarmv2.sh  | play tool: an alarm program to keep me productive. I guess this uses sleep instead of time.
-firewall_helper.sh | tool : an attempt to make create firewall rules from a bash script
-ksar_sar.sh        | tool : bare bones tool to convert 31 sar files in a format ksar will process
-toggle_swap.bash   | tool: swap toggle. not my code.
+It showcases some of things I can do.
 
-enjoy :clown_face:
+Filename | Description | Language 
+----------- | ----------- | ---------- 
+clock_watcher.bash | tells how many hours we have been working for time reporting puposes.  | unknown
+clone_git_repos.bash | sync all known repos to aws s3 | unknown
+espeak_alarm.sh | alarm countdown with espeak | unknown
+espeak_alarmv2.sh | alarm countdown with espeak | unknown
+espeak_alarmv3.sh | alarm countdown with espeak | unknown
+firewall_helper.sh | iptables helper aka firewall helper | unknown
+generate_README_md.rb | tool to automate the Generation of README.md files. |  ruby
+ksar_sar.bash | get sar logs in LC_ALL=C format so they work. | unknown
+pdk_convert_batch.bash | converts puppet modules in current directory to use PDK stuff. Normally, it just addes meta data. Note user still needs to press 'Y' when run. | unknown
+system_discovery_script.bash | unknown | unknown
+toggle_swap.bash | unknown | unknown
