@@ -2,6 +2,7 @@ Most of it is just for fun.
   It showcases some of things I can do.
   Filename | Description | Language
   ----------- | ----------- | ----------
+backup_puppet_to_s3.bash   |   runs backups of puppet. Data is stored in /var/puppetlabs/backups/ by default | #!/bin/bash 
 clock_watcher.bash   |   tells how many hours we have been working for time reporting puposes. | #!/bin/bash 
 clone_git_repos.bash   |   sync all known repos to aws s3 | #!/bin/bash 
 date_time_reference.bash   |   date time commands and thier syntax | #!/bin/bash 
