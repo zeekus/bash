@@ -2,7 +2,7 @@
 #filename: automated_aws_snapshots.sh
 #author: Theodore Knab
 #date: 06/25/2020
-#description make backups of the Linux hosts in aws
+#description make snapshots of the Linux hosts in aws
 
 mydate=$(date +%m_%d_%Y) #get date
 
