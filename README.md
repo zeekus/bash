@@ -3,6 +3,7 @@ Most of it is just for fun.
   Filename | Description | Language
   ----------- | ----------- | ----------
 automated_aws_snapshots.sh   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
+backup_certs.sh   |   | #!/bin/bash 
 backup_puppet_to_s3.bash   |   runs backups of puppet. Data is stored in /var/puppetlabs/backups/ by default | #!/bin/bash 
 clock_watcher.bash   |   tells how many hours we have been working for time reporting puposes. | #!/bin/bash 
 clone_git_repos.bash   |   sync all known repos to aws s3 | #!/bin/bash 
