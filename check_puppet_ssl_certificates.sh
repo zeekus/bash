@@ -1,6 +1,7 @@
 #!/bin/bash
 #filename: check_puppet_ssl_certs.sh
 #description: check expirations on puppet certificates.
+#author: Teddy Knab
 
 
 list_of_files=$(find /etc/puppetlabs/puppet/ssl -iname '*.pem')
