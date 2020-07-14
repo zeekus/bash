@@ -1,5 +1,6 @@
 #!/bin/bash
 #file:backup_puppet_ssl_certificates.sh
+#description: backup puppet ssl certificates for a 2018 instance of PE
 folders="/etc/puppetlabs/puppet/ssl
 /etc/puppetlabs/puppetdb/ssl 
 /opt/puppetlabs/server/data/console-services/certs
