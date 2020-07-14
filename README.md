@@ -5,6 +5,7 @@ Most of it is just for fun.
 automated_aws_snapshots.sh   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
 backup_certs.sh   |   backup puppet ssl certificates for a 2018 instance of PE | #!/bin/bash 
 backup_puppet_to_s3.bash   |   runs backups of puppet. Data is stored in /var/puppetlabs/backups/ by default | #!/bin/bash 
+check_puppet_ssl_certificates.sh   |   check expirations on puppet certificates. | #!/bin/bash 
 clock_watcher.bash   |   tells how many hours we have been working for time reporting puposes. | #!/bin/bash 
 clone_git_repos.bash   |   sync all known repos to aws s3 | #!/bin/bash 
 date_time_reference.bash   |   date time commands and thier syntax | #!/bin/bash 
