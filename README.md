@@ -24,4 +24,5 @@ rpm_remove_batch.sh   |   remove a bunch of rpm packages | #!/bin/bash
 sedref.bash   |   sed replace reference | #!/bin/bash 
 simple_add_a_user.bash   |   add a user from a bash script | #!/bin/bash 
 system_discovery_script.bash   |   basis system discovery script | #!/bin/bash 
+test-json_gen.sh   |   automatically registers a domain and ptr record in route53 for AWS using json files. | #!/bin/bash 
 toggle_swap.bash   |   cleans swap in Linux kernel | #!/bin/bash 
