@@ -37,7 +37,7 @@ for myfile in $filelist
   my_desc=`echo $my_desc | sed s/d.*://g` #removes word description in all its varieties 
   my_lang=$(head -1 $myfile| sed -e s/*//g )
   if [ $myfile != $filename ]; then
-    my_link="<a href=\"<a href=\"https://github.com/zeekus/bash/blob/master/$myfile\"> $myfile </a>"
+    my_link="<a href=\"https://github.com/zeekus/bash/blob/master/$myfile\"> $myfile </a>"
     #echo "$myfile   |  $my_desc | $my_lang " >> $filename
     echo "$my_link   |  $my_desc | $my_lang " >> $filename
   fi 
