@@ -6,7 +6,10 @@ Tue Feb 25 07:16:41 EST 2020
 
 date --date "+$(( 6 * 60 )) minutes" +"%D %l:%M:%S"
 
-date -d 'now + 3 weeks'
+date -d 'now + 3 weeks' #date 3 weeks from today
+
+date -d 'now - 147 days' #date 147 days ago
+
 
 date -d 'now + 30 minutes'
 
