@@ -25,8 +25,8 @@ echo $lookup_results
 IPBRIF=$(echo $lookup_results| awk -F ":" '{print $2}' | awk -F "." '{print $4"." $3}')
 
 #verify we have the 2 octects
-if [[ ! -z $IPBRIF ]]; then
-   echo "check ... ipbrief is $IPBRIF"
+if [[ ! -z $IPBRIF && ! $IPBRIF =~ ^\.$ ]]; then
+   echo "check ... ipbrief is '$IPBRIF'"
 else
    echo "error ... IPBRIEF is empty exiting"
    exit
