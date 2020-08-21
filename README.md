@@ -9,6 +9,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/check_puppet_ssl_with_email.sh"> check_puppet_ssl_with_email.sh </a>   |   | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/clock_watcher.bash"> clock_watcher.bash </a>   |   tells how many hours we have been working for time reporting puposes. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/clone_git_repos.bash"> clone_git_repos.bash </a>   |   sync all known repos to aws s3 | #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/create_aws_ptr_record.sh"> create_aws_ptr_record.sh </a>   |   creates a ptr record in route53 for AWS using json files from the main A or CNAME record. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/date_time_reference.bash"> date_time_reference.bash </a>   |   date time commands and thier syntax | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/espeak_alarm.sh"> espeak_alarm.sh </a>   |   alarm countdown with espeak | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/espeak_alarmv2.sh"> espeak_alarmv2.sh </a>   |   alarm countdown with espeak | #!/bin/bash 
