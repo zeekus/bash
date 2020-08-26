@@ -2,6 +2,7 @@ Most of it is just for fun.
   It showcases some of things I can do.
   Filename | Description | Language
   ----------- | ----------- | ----------
+<a href="https://github.com/zeekus/bash/blob/master/assign_args_to_variable.sh"> assign_args_to_variable.sh </a>   |   assigns arguments to a Variable in bash | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/automated_aws_snapshots.sh"> automated_aws_snapshots.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/backup_certs.sh"> backup_certs.sh </a>   |   backup puppet ssl certificates for a 2018 instance of PE | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/backup_puppet_to_s3.bash"> backup_puppet_to_s3.bash </a>   |   runs backups of puppet. Data is stored in /var/puppetlabs/backups/ by default | #!/bin/bash 
@@ -15,6 +16,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/espeak_alarmv2.sh"> espeak_alarmv2.sh </a>   |   alarm countdown with espeak | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/espeak_alarmv3.sh"> espeak_alarmv3.sh </a>   |   alarm countdown with espeak | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/firewall_helper.sh"> firewall_helper.sh </a>   |   iptables helper aka firewall helper | #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/fix_users_permissions.sh"> fix_users_permissions.sh </a>   |   fixes permissions on user directories from a list of users | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/generate_readme.bash"> generate_readme.bash </a>   |   generates a readme.md file by scanning files in directory | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/ksar_sar.bash"> ksar_sar.bash </a>   |   get sar logs in LC_ALL=C format so they work. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/monitor_apache_errors.sh"> monitor_apache_errors.sh </a>   |   simple monitoring script for apache error logs | #!/bin/bash 
