@@ -3,11 +3,26 @@
 #author: Theodore Knab
 #date: 08/26/2020
 #description: fixes permissions on user directories from a list of users
+#user list can be either added at the command line static
 
-#users seperated by a space
-users="pe-orchestration-services pe-console-services pe-puppetdb pe-webserver pe-postgres pe-ace-server pe-bolt-server pe-puppet"
 desired_perms=750
 
+clear
+args=.
+#user input check
+if [ "$#" -gt 0 ]; then
+   echo "notice... You entered $# arguements"
+   echo "You provided the arguments:" "$@"
+   args=$@
+   echo args are $args
+   users=${args}
+else 
+ #users seperated by a space
+ users="pe-orchestration-services pe-console-services pe-puppetdb pe-webserver pe-postgres pe-ace-server pe-bolt-server pe-puppet" 
+fi
+
+
+echo "Warning: We will be fixing permissions on these users:  '$users' "
 echo "WARNING: this program will only display how to change things back."
 echo "It will make changes and display the reversion."
 mycountdown=5
