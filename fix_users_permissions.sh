@@ -6,11 +6,13 @@
 #user list can be either added at the command line static
 
 desired_perms=750
+revert_change_file="revert_fix_user_permission_$(date +%m_%d_%Y_%H%M).sh" #to undo changes
 
 function warning_countdown () {
   echo "Warning: We will be fixing permissions on these users:  '$users' "
   echo "WARNING: this program will only display how to change things back."
   echo "It will make changes and display the reversion."
+  echo "use file: $revert_change_file to revert any changes made"
   mycountdown=5
   while [ $mycountdown -gt 0 ]
    do 
@@ -50,10 +52,11 @@ for user in $users
          stringarray=($current_perms) #convert string to array so we can the second field
          perms=$(echo ${stringarray[1]}| tr -dc '0-9') #only get numbers from string
          if [ "$perms" -eq "$desired_perms" ]; then
-           echo "#change appears already to have been made on $single_path"
+           echo "#no change made. It appears the permissions are set on $single_path to $perms"
          else 
            echo "chmod $perms $single_path #to revert from change" #output only gives the reversion 
-           chmod $desired_perms $single_path #changing permissions
+           echo "chmod $perms $single_path #to revert from change" >> $revert_change_file
+           chmod $desired_perms $single_path #changing permissions      
          fi 
        done
 
