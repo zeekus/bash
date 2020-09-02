@@ -1,16 +1,27 @@
 #!/bin/bash
 #description: date time commands and thier syntax
 
+#print date/time with differnt timezone
 TZ=America/New_York date
 Tue Feb 25 07:16:41 EST 2020
 
+#message logs use this type of date
+date -d  yesterday +%b" "%-d #note minus removes 0 or space 
+grep -i $(date -d yesterday +%b" "%-d) /var/log/messages #to view log entries from yesterday 
+
+#for apache logs:
+date +%m_%d_%Y_%H%M
+
+#find time 6 hours from now
 date --date "+$(( 6 * 60 )) minutes" +"%D %l:%M:%S"
 
-date -d 'now + 3 weeks' #date 3 weeks from today
+#find time 3 weeks from  today
+date -d 'now + 3 weeks' 
 
-date -d 'now - 147 days' #date 147 days ago
+#fine date 147 days ago
+date -d 'now - 147 days' 
 
-
+#time in 30 minutes
 date -d 'now + 30 minutes'
 
 echo "Week number"
@@ -59,5 +70,4 @@ echo "yesterday in shell format for document home dirs CM/ECF"
 yesterday=`date +%Y%m%d -d -yesterday`
 echo $yesterday
 
-#for logs:
-date +%m_%d_%Y_%H%M
+
