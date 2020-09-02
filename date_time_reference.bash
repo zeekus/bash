@@ -7,7 +7,8 @@ Tue Feb 25 07:16:41 EST 2020
 
 #message logs use this type of date
 date -d  yesterday +%b" "%-d #note minus removes 0 or space 
-grep -i $(date -d yesterday +%b" "%-d) /var/log/messages #to view log entries from yesterday 
+grep -i "$(date -d yesterday +%b"  "%-d)" /var/log/messages #to view log entries from yesterday
+
 
 #for apache logs:
 date +%m_%d_%Y_%H%M
