@@ -1,6 +1,8 @@
 #!/bin/bash
 #filename: puppet_service.sh
 #description: a simple wrapper to send start or stop to puppet
+#Author: Theodore Knab
+#date: 09/14/2020
 
 if [ "$#" -ne 1 ]; then
     echo "error ... You must enter exactly 1 command line arguments"
