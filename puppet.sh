@@ -12,10 +12,12 @@ fi
 echo  "results: $0 $1"
 
 function services () {
-   puppet resource service pe-orchestration-services ensure=$status
-   puppet resource service pe-puppetdb ensure=$status
    puppet resource service pe-postgresql ensure=$status
+   puppet resource service pe-puppetdb ensure=$status
+   puppet resource service pe-orchestration-services ensure=$status
+   puppet resource service pe-console-services ensure=$status
    puppet resource service puppet ensure=$status
+   puppet resource service pe-nginx ensure=$status
 }
 
 if [[ $1 =~ ^start ]];then
@@ -29,3 +31,4 @@ if [[ $1 =~ ^stop ]]; then
   status="stopped"
   services
 fi
+
