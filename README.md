@@ -22,6 +22,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/monitor_apache_errors.sh"> monitor_apache_errors.sh </a>   |   simple monitoring script for apache error logs | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/one_instance_backup.sh"> one_instance_backup.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/pdk_convert_batch.bash"> pdk_convert_batch.bash </a>   |   creates the meta files PDK likes in the existing puppet modules in current directory | #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/puppet.sh"> puppet.sh </a>   |   a simple wrapper to send start or stop to puppet | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/rename_files.bash"> rename_files.bash </a>   |   removes c6 from a group of files with the prefix. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/reset_firewalld_to_default.sh"> reset_firewalld_to_default.sh </a>   |   removes any firewall customization and reverts to OS version. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/rpm_remove_batch.sh"> rpm_remove_batch.sh </a>   |   remove a bunch of rpm packages | #!/bin/bash 
