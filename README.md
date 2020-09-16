@@ -27,6 +27,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/reset_firewalld_to_default.sh"> reset_firewalld_to_default.sh </a>   |   removes any firewall customization and reverts to OS version. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/rpm_remove_batch.sh"> rpm_remove_batch.sh </a>   |   remove a bunch of rpm packages | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/sedref.bash"> sedref.bash </a>   |   sed replace reference | #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/set_aws_tags_in_cli.sh"> set_aws_tags_in_cli.sh </a>   |   sets target tags on hosts with matching search tags. | #!/usr/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/set_backup_tag_aws.sh"> set_backup_tag_aws.sh </a>   |   set backup tags on intances that are missing them. | #!/usr/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/simple_add_a_user.bash"> simple_add_a_user.bash </a>   |   add a user from a bash script | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/system_discovery_script.bash"> system_discovery_script.bash </a>   |   basis system discovery script | #!/bin/bash 
