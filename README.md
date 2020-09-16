@@ -18,6 +18,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/firewall_helper.sh"> firewall_helper.sh </a>   |   iptables helper aka firewall helper | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/fix_users_permissions.sh"> fix_users_permissions.sh </a>   |   fixes permissions on user directories from a list of users | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/generate_readme.bash"> generate_readme.bash </a>   |   generates a readme.md file by scanning files in directory | #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/get_aws_tags.sh"> get_aws_tags.sh </a>   |   |  
 <a href="https://github.com/zeekus/bash/blob/master/ksar_sar.bash"> ksar_sar.bash </a>   |   get sar logs in LC_ALL=C format so they work. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/monitor_apache_errors.sh"> monitor_apache_errors.sh </a>   |   simple monitoring script for apache error logs | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/one_instance_backup.sh"> one_instance_backup.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
