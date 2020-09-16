@@ -17,11 +17,12 @@ echo "...getting list of instances: to set the instance tags"
 my_instance_list=$(aws ec2 describe-instances --filter "Name=tag:$search_tag,Values=$search_value" --query 'Reservations[].Instances[].InstanceId' --output text)
 for instance in $my_instance_list
   do
-    iname=$(aws ec2 describe-tags --filters "Name=resource-id,Values=$instance" "Name=key,Values=Name" --query 'Tags[].Value' --output text)
-    echo $instance $iname
-    check_for_target_tag=$(aws ec2 describe-tags --filters "Name=resource-id,Values=$instance" --query 'Tags[?Key==`$target_tag`].Value[]' --output text)
+    instance_name_tag=$(aws ec2 describe-tags --filters "Name=resource-id,Values=$instance" "Name=key,Values=Name" --query 'Tags[].Value' --output text)
+    echo "" #spacing 
+    echo "...Instance: $instance Name: $instance_name_tag"
+    check_for_target_tag=$(aws ec2 describe-tags --filters "Name=resource-id,Values=$instance"  --query "Tags[?Key=='$target_tag'].Value[]" --output text)
     if [ ! -z $check_for_target_tag ]; then
-      echo "...The tag of '$target_tag' appears to be set. Do nothing..."
+      echo "nc...The tag of '$target_tag' appears to be set. Do nothing..."
     else
       echo "c...The tag of '$target_tag' appears to missing on our instance. Creating it."
       set_tags="aws ec2 create-tags --resource $instance --tags Key=$target_tag,Value=$target_value"
@@ -35,9 +36,9 @@ for instance in $my_instance_list
     for volume in $list_of_volume_ids
       do
         echo "...volume is $volume"
-        check_for_target_tag=$(aws ec2 describe-tags --filters "Name=resource-id,Values=$volume" --query 'Tags[?Key==`$target_tag`].Value[]' --output text)
+        check_for_target_tag=$(aws ec2 describe-tags --filters "Name=resource-id,Values=$volume"  --query "Tags[?Key=='$target_tag'].Value[]" --output text)
         if [ ! -z $check_for_target_tag ]; then
-          echo "...The tag of '$target_tag' appears to be set. Do nothing..."
+          echo "nc...The tag of '$target_tag' appears to be set. Do nothing..."
         else
           echo "c...The tag of '$target_tag' appears to missing on our instance. Creating it."
           set_tags="aws ec2 create-tags --resource $volume --tags Key=$target_tag,Value=$target_value"
