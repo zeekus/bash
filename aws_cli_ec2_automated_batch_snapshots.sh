@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: automated_aws_snapshots.sh
+#filename: aws_cli_ec2_automated_batch_snapshots.sh
 #author: Theodore Knab
 #date: 06/25/2020
 #License Type: GNU GENERAL PUBLIC LICENSE, Version 3

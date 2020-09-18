@@ -2,7 +2,7 @@ Most of it is just for fun.
   It showcases some of things I can do.
   Filename | Description | Language
   ----------- | ----------- | ----------
-<a href="https://github.com/zeekus/bash/blob/master/automated_aws_snapshots.sh"> automated_aws_snapshots.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_automated_batch_snapshots.sh"> aws_cli_ec2_automated_batch_snapshots.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_list_old_snapshots.sh"> aws_cli_ec2_list_old_snapshots.sh </a>   |   searches and returns a list of snapshots from AWS CLI | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_one_instance_backup.sh"> aws_cli_ec2_one_instance_backup.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_set_tags.sh"> aws_cli_ec2_set_tags.sh </a>   |   sets target tags on instances and related volumes with matching search tags. | #!/usr/bin/bash 
