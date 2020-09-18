@@ -5,6 +5,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_automated_batch_snapshots.sh"> aws_cli_ec2_automated_batch_snapshots.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_list_old_snapshots.sh"> aws_cli_ec2_list_old_snapshots.sh </a>   |   searches and returns a list of snapshots from AWS CLI | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_one_instance_backup.sh"> aws_cli_ec2_one_instance_backup.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_read_tags_local.sh"> aws_cli_ec2_read_tags_local.sh </a>   |   |  #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_set_tags.sh"> aws_cli_ec2_set_tags.sh </a>   |   sets target tags on instances and related volumes with matching search tags. | #!/usr/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_route53_create_ptr.sh"> aws_cli_route53_create_ptr.sh </a>   |   creates a ptr record in route53 for AWS using json files from the main A or CNAME record. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_route53_test-json.sh"> aws_cli_route53_test-json.sh </a>   |   automatically registers a domain and ptr record in route53 for AWS using json files. | #!/bin/bash 
