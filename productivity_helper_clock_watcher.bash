@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: clock_watcher.bash
+#filename: productivity_helper_clock_watcher.bash
 #description: tells how many hours we have been working for time reporting puposes. 
 
 declare -i lunch

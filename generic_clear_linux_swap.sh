@@ -1,5 +1,6 @@
 #!/bin/bash
 #author: unknown
+#filename: generic_clear_linux_swap.sh
 #descritpion: cleans swap in Linux kernel
 #clears swap when free memory exceeds swap
 

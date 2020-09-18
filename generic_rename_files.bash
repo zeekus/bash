@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: rename_files.bash
+#filename: generic_rename_files.bash
 #description: removes c6 from a group of files with the prefix.  
 
 files=$(ls)

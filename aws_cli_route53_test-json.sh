@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: test-json.sh
+#filename: aws_cli_route53_test-json.sh
 #description: automatically registers a domain and ptr record in route53 for AWS using json files.
 #author: Theodore Knab
 

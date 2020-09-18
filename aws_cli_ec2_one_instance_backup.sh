@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: one_instance_backup.sh
+#filename: aws_cli_ec2_one_instance_backup.sh
 #author: Theodore Knab
 #date: 06/25/2020
 #License Type: GNU GENERAL PUBLIC LICENSE, Version 3

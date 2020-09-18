@@ -1,7 +1,8 @@
 #!/bin/bash
 #date: 8/25/2020
 #author: Theodore Knab
-#description: simple monitoring script for apache error logs
+#filename: confluence_montior_apache.sh
+#description: simple monitoring script for apache error logs and restart when failure is logged
 
 
 monitoring_time=10 #monitoring interval

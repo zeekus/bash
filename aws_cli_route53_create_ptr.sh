@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: create_aws_ptr.sh
+#filename: aws_cli_route53_create_ptr.sh
 #description: creates a ptr record in route53 for AWS using json files from the main A or CNAME record.
 #author: Theodore Knab
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-#fix_user_permissions.sh
+#security_fix_user_permissions.sh
 #author: Theodore Knab
 #date: 08/26/2020
 #description: fixes permissions on user directories from a list of users

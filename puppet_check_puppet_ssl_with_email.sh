@@ -1,5 +1,5 @@
 #!/bin/bash
-#check_puppet_ssl_with_email.sh
+#puppet_check_puppet_ssl_with_email.sh
 #author: someone on the puppet slack channel 
 MAILTO='root'
 OPENSSL='/opt/puppetlabs/puppet/bin/openssl'

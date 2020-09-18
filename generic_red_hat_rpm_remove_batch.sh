@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: rpm_remove_batch.sh
+#filename: generic_red_hat_rpm_remove_batch.sh
 #description: remove a bunch of rpm packages
 TEST=1
 if [ $TEST == 1 ]; then

@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: check_puppet_ssl_certs.sh
+#filename: puppet_check_puppet_ssl_certs.sh
 #description: check expirations on puppet certificates.
 #author: Teddy Knab
 

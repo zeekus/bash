@@ -1,6 +1,6 @@
 #!/usr/bin/bash
-#filename: set_aws_tags_in_cli.sh
-#description: sets target tags on hosts with matching search tags. 
+#filename: aws_cli_ec2_set_tags.sh 
+#description: sets target tags on instances and related volumes with matching search tags. 
 #author: Theodore Knab
 #date: 9/16/2020
 

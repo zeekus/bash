@@ -1,7 +1,7 @@
 #!/bin/bash
 #author: Theodore Knab
 #description: searches and returns a list of snapshots from AWS CLI
-#filename: list_old_aws_snapshots.sh
+#filename: aws_cli_ec2_list_old_snapshots.sh
 #requirements jq a json parser
 
 jqbinary=/usr/bin/jq #jq binary

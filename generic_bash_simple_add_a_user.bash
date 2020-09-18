@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: simple_add_a_user.bash
+#filename: generic_bash_simple_add_a_user.bash
 #description: add a user from a bash script
 
 user="admin"

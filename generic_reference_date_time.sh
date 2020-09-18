@@ -1,5 +1,6 @@
 #!/bin/bash
 #description: date time commands and thier syntax
+#filename: generic_reference_date_time.sh
 
 #print date/time with differnt timezone
 TZ=America/New_York date

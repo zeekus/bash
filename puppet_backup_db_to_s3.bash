@@ -1,7 +1,7 @@
 #!/bin/bash
 #Author: Theodore Knab
 #date: 5/11/2020
-#filename: backup_puppet_to_s3.bash
+#filename: puppet_backup_db_to_s3.bash
 #description: runs backups of puppet. Data is stored in /var/puppetlabs/backups/ by default
 #we move to s3
 debug=0

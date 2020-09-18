@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#filename: set_backup_tag_aws.sh
+#filename: aws_ec2_set_backup_tag_insance_only.sh
 #description: set backup tags on intances that are missing them.
 #author: Theodore Knab
 #date: 9/15/2020

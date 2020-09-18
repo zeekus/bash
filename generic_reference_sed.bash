@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: sedref.bash
+#filename: generic_reference_sed.bash
 #description: sed replace reference
 
 #find all files with pp and replace clean_metadata with centos6_clean_metadata

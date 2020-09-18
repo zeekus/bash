@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: puppet.sh
+#filename: puppet_restart_processes.sh
 #description: a simple wrapper to send start or stop to puppet
 #Author: Theodore Knab
 #date: 09/14/2020
