@@ -10,6 +10,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_route53_create_ptr.sh"> aws_cli_route53_create_ptr.sh </a>   |   creates a ptr record in route53 for AWS using json files from the main A or CNAME record. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_route53_test-json.sh"> aws_cli_route53_test-json.sh </a>   |   automatically registers a domain and ptr record in route53 for AWS using json files. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_ec2_set_backup_tag_insance_only.sh"> aws_ec2_set_backup_tag_insance_only.sh </a>   |   set backup tags on intances that are missing them. | #!/usr/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/backup_home_dirs.sh"> backup_home_dirs.sh </a>   |   backups up all the home directories. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/clone_git_repos.bash"> clone_git_repos.bash </a>   |   sync all known repos to aws s3 | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/confluence_montior_apache.sh"> confluence_montior_apache.sh </a>   |   simple monitoring script for apache error logs and restart when failure is logged | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/espeak_alarm.sh"> espeak_alarm.sh </a>   |   alarm countdown with espeak | #!/bin/bash 
