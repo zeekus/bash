@@ -2,7 +2,7 @@
 #description: date time commands and thier syntax
 #filename: generic_reference_date_time.sh
 
-#print date/time with differnt timezone
+#print date/time with different timezone
 TZ=America/New_York; current_date=$(date)
 echo the current date is $current_date
 #Tue Feb 25 07:16:41 EST 2020
