@@ -3,8 +3,9 @@
 #filename: generic_reference_date_time.sh
 
 #print date/time with differnt timezone
-TZ=America/New_York date
-Tue Feb 25 07:16:41 EST 2020
+TZ=America/New_York; current_date=$(date)
+echo the current date is $current_date
+#Tue Feb 25 07:16:41 EST 2020
 
 #message logs use this type of date
 date -d  yesterday +%b" "%-d #note minus removes 0 or space 
