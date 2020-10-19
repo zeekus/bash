@@ -5,7 +5,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_automated_batch_snapshots.sh"> aws_cli_ec2_automated_batch_snapshots.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_list_old_snapshots.sh"> aws_cli_ec2_list_old_snapshots.sh </a>   |   searches and returns a list of snapshots from AWS CLI | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_one_instance_backup.sh"> aws_cli_ec2_one_instance_backup.sh </a>   |  description make snapshots of the Linux hosts in aws | #!/bin/bash 
-<a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_read_tags_local.sh"> aws_cli_ec2_read_tags_local.sh </a>   |   |  #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_read_tags_local.sh"> aws_cli_ec2_read_tags_local.sh </a>   |   read local host's aws tags | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_ec2_set_tags.sh"> aws_cli_ec2_set_tags.sh </a>   |   sets target tags on instances and related volumes with matching search tags. | #!/usr/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_route53_create_ptr.sh"> aws_cli_route53_create_ptr.sh </a>   |   creates a ptr record in route53 for AWS using json files from the main A or CNAME record. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/aws_cli_route53_test-json.sh"> aws_cli_route53_test-json.sh </a>   |   automatically registers a domain and ptr record in route53 for AWS using json files. | #!/bin/bash 
@@ -16,6 +16,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/espeak_alarm.sh"> espeak_alarm.sh </a>   |   alarm countdown with espeak | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/espeak_alarmv2.sh"> espeak_alarmv2.sh </a>   |   alarm countdown with espeak | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/espeak_alarmv3.sh"> espeak_alarmv3.sh </a>   |   alarm countdown with espeak | #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/find_gaps.sh"> find_gaps.sh </a>   |   host gaps and fill them by using the available hostname | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/firewall_helper.sh"> firewall_helper.sh </a>   |   iptables helper aka firewall helper | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/generate_readme.bash"> generate_readme.bash </a>   |   generates a readme.md file by scanning files in directory | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/generic_bash_example_assign_args_to_variable.sh"> generic_bash_example_assign_args_to_variable.sh </a>   |   assigns arguments to a Variable in bash | #!/bin/bash 
