@@ -22,6 +22,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/generic_bash_example_assign_args_to_variable.sh"> generic_bash_example_assign_args_to_variable.sh </a>   |   assigns arguments to a Variable in bash | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/generic_bash_simple_add_a_user.bash"> generic_bash_simple_add_a_user.bash </a>   |   add a user from a bash script | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/generic_clear_linux_swap.sh"> generic_clear_linux_swap.sh </a>   |   cleans swap in Linux kernel | #!/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/generic_find_symlinks.sh"> generic_find_symlinks.sh </a>   |   find symbolic links | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/generic_red_hat_rpm_remove_batch.sh"> generic_red_hat_rpm_remove_batch.sh </a>   |   remove a bunch of rpm packages | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/generic_reference_date_time.sh"> generic_reference_date_time.sh </a>   |   date time commands and thier syntax | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/generic_reference_sed.bash"> generic_reference_sed.bash </a>   |   sed replace reference | #!/bin/bash 
