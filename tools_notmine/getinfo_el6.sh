@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # getinfo.sh
+#source: https://raw.githubusercontent.com/elrepo/packages/master/getinfo/el6/getinfo.sh
 #
 # This script collects system hardware and software information.
 # Exact information collected depends on how it is called.
