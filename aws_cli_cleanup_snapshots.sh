@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: cleanup_snapshots.sh
+#filename: aws_cli_cleanup_snapshots.sh
 #author: Teddy Knab
 #date: 12/14/2020
 #description: clean up old snapshots
