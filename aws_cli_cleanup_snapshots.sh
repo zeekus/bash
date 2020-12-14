@@ -17,15 +17,15 @@ sleep $time_delay
 
 
 if [[ -e $location_jq ]];then
-   if [[ $debug -eq 1 ]]; then
-     printf '%s\n' "debug: jq found ... running..."
-     printf 'debug: running %s cleanup sequences\n' $desired_runs
-     printf 'debug: regex_matcher value is \"%s\" \n' $regex_matcher
-     printf 'debug: time_delay value is \"%s\"\n' $time_delay
-     printf 'debug: number_of_days_old value is \"%s\"\n' $number_of_days_old
+  if [[ $debug -eq 1 ]]; then
+    printf '%s\n' "debug: jq found ... running..."
+    printf 'debug: running %s cleanup sequences\n' $desired_runs
+    printf 'debug: regex_matcher value is \"%s\" \n' $regex_matcher
+    printf 'debug: time_delay value is \"%s\"\n' $time_delay
+    printf 'debug: number_of_days_old value is \"%s\"\n' $number_of_days_old
    fi
 else
-   exit
+  exit
 fi
 
 
@@ -38,39 +38,39 @@ total_cleanup_size=0
 
 for snap in $list
   do
-    let count=($count+1)
-    csnap=$(echo $snap | sed 's/"//g') #remove quotes
+   let count=($count+1)
+   csnap=$(echo $snap | sed 's/"//g') #remove quotes
 
-    if [[ $debug -eq 1 ]]; then
-      aws ec2 describe-snapshots --snapshot-ids $csnap
-    fi
+   if [[ $debug -eq 1 ]]; then
+     aws ec2 describe-snapshots --snapshot-ids $csnap
+   fi
 
-    #creates a nested hash
-    snapshot_description=$(aws ec2 describe-snapshots --snapshot-ids $csnap)
+   #creates a nested hash
+   snapshot_description=$(aws ec2 describe-snapshots --snapshot-ids $csnap)
 
-    desc=$(echo $snapshot_description| jq -r '.Snapshots[].Description') #description
-    stime=$(echo $snapshot_description| jq -r '.Snapshots[].StartTime')
-    volumesize=$(echo $snapshot_description| jq -r '.Snapshots[].VolumeSize')
-    printf '\n%s > %s\n' $count "----------------------------------"
-    printf '%s > Description: %s\n' $count $desc
-    printf '%s > Start Time: %s\n'  $count $stime
-    printf '%s > Volume Size: %s\n' $count $volumesize
-    total_cleanup_size=$((total_cleanup_size + volumesize))
+   desc=$(echo $snapshot_description| jq -r '.Snapshots[].Description') #description
+   stime=$(echo $snapshot_description| jq -r '.Snapshots[].StartTime')
+   volumesize=$(echo $snapshot_description| jq -r '.Snapshots[].VolumeSize')
+   printf '\n%s > %s\n' $count "----------------------------------"
+   printf '%s > Description: %s\n' $count $desc
+   printf '%s > Start Time: %s\n'  $count $stime
+   printf '%s > Volume Size: %s\n' $count $volumesize
+   total_cleanup_size=$((total_cleanup_size + volumesize))
 
-    tb_of_data=$(( total_cleanup_size / 1024))
-    printf '%s > Total Cleanup Size: %s GB\n' $count $total_cleanup_size
-    printf '%s > Total Cleanup Size: %s TB\n' $count $tb_of_data
-    printf 'running... aws ec2 delete-snapshot --snapshot-id %s'  $csnap
-    aws ec2 delete-snapshot --snapshot-id $csnap
-    if [[ $? -eq 0 ]]; then
-       printf '%s > %s\n' $count "successful"
-    else
-       printf '%s > %s\n' $count "failed"
-       exit
-    fi
-
-    #end after count equals desired desired_runs
-    if [ $count -eq $desired_runs ]; then
+   tb_of_data=$(( total_cleanup_size / 1024))
+   printf '%s > Total Cleanup Size: %s GB\n' $count $total_cleanup_size
+   printf '%s > Total Cleanup Size: %s TB\n' $count $tb_of_data
+   printf 'running... aws ec2 delete-snapshot --snapshot-id %s'  $csnap
+   aws ec2 delete-snapshot --snapshot-id $csnap
+   if [[ $? -eq 0 ]]; then
+     printf '%s > %s\n' $count "successful"
+   else
+     printf '%s > %s\n' $count "failed"
      exit
-    fi
+   fi
+
+   #end after count equals desired desired_runs
+   if [ $count -eq $desired_runs ]; then
+     exit
+   fi
   done
