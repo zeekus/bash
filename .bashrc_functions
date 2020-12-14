@@ -90,3 +90,17 @@ list_function_names() {
       echo $function_name
     done
 }
+
+
+top_20_hitters_by_hour () {
+   myday=$(seq -w 00 23) #24 hours
+   for myhour in $myday
+     do
+     mylines=$(cat /var/log/varnish/varnishncsa.log | grep `date +%d/%b/%Y:$myhour` | awk {'print $1'} | sort -n | uniq -c | sort -n | tail -20)
+     mylines_size=${#mylines}
+     if [[ $mylines_size -gt 0 ]];then
+        echo "hour $myhour"
+        cat /var/log/varnish/varnishncsa.log | grep `date +%d/%b/%Y:$myhour` | awk {'print $1'} | sort -n | uniq -c | sort -n | tail -20
+     fi
+     done
+}
