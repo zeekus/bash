@@ -6,28 +6,32 @@
 
 location_jq="/usr/bin/jq" #dependancy to parse the aws cli in json format
 desired_runs=1000 #limit  desired_runs
-debug=0 #set to 1 for debugging
+debug=1 #set to 1 for debugging
 regex_matcher="ec2ab_vol" #regular expression string to match
 time_delay=5
-this_many_days="300" #backups older than this many days
+number_of_days_old=363 #backups older than this many days
 
 clear
-printf "Warning. In %s seconds, %s snapshots with the name \'%s\' will be removed. Press Ctrl C to cancel.\n" $time_delay $desired_runs $regex_matcher
+printf "Warning. In %s seconds, %s snapshots with the name \'%s\' and older than \'%s\' days will be removed. Press Ctrl C to cancel.\n" $time_delay $desired_runs $regex_matcher $number_of_days_old
 sleep $time_delay
 
 
 if [[ -e $location_jq ]];then
    if [[ $debug -eq 1 ]]; then
-     echo "debug: jq found ... running..."
-     echo "debug: running $desired_runs cleanup sequences"
+     printf '%s\n' "debug: jq found ... running..."
+     printf 'debug: running %s cleanup sequences\n' $desired_runs
+     printf 'debug: regex_matcher value is \"%s\" \n' $regex_matcher
+     printf 'debug: time_delay value is \"%s\"\n' $time_delay
+     printf 'debug: number_of_days_old value is \"%s\"\n' $number_of_days_old
    fi
 else
    exit
 fi
 
+
 #list of all the snapshots with regex_matcher
 #list=$(aws ec2 describe-snapshots --owner self --output json | jq '.Snapshots[] | select(.StartTime < "'$(date --date='-1 year' '+%Y-%m-%d')'") | [.Description, .StartTime, .SnapshotId]' | grep -i $regex_matcher -A 2 | grep -i snap)
-list=$(aws ec2 describe-snapshots --owner self --output json | jq '.Snapshots[] | select(.StartTime < "'$(date --date='-$this_many_days' '+%Y-%m-%d')'") | [.Description, .StartTime, .SnapshotId]' | grep -i $regex_matcher -A 2 | grep -i snap)
+list=$(aws ec2 describe-snapshots --owner self --output json | jq '.Snapshots[] | select(.StartTime < "'$(date --date="-${number_of_days_old} days" '+%Y-%m-%d')'") | [.Description, .StartTime, .SnapshotId]' | grep -i $regex_matcher -A 2 | grep -i snap)
 
 count=0 #counter
 total_cleanup_size=0
