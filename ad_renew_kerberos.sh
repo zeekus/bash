@@ -6,7 +6,14 @@ mypass="mypass"
 myrealm="EXAMPLE.NET"
 myuser="myuser"
 domainuser=$myuser@$myrealm
+domain=$myrealm| tr '[:upper:]' '[:lower:]'
+domainserver="myhost.$domain"
 echo "user: $domainuser"
+
+set_time_to_windows() {
+  echo "sync time with $domainserver"
+  net time set -S $domainserver
+}
 
 kinit_reinitialize() {
     echo "reinitializing kinit"
@@ -37,6 +44,6 @@ elif [[ $klist =~ ^klist:.No ]]; then
   echo "ERROR message: '$klist'"
   kinit_reinitialize
 else
-  echo "not defined"
-  echo "else"
+  echo "user variables not defined"
+  echo "Please define them in the script."
 fi
