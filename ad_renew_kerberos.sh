@@ -16,6 +16,7 @@ set_time_to_windows() {
 }
 
 kinit_reinitialize() {
+    set_time_to_windows # sync time 
     echo "reinitializing kinit"
     echo "$myuser@$myrealm"
     echo $mypass | kinit -V $domainuser
