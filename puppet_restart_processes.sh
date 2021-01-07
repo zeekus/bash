@@ -2,7 +2,9 @@
 #filename: puppet_restart_processes.sh
 #description: a simple wrapper to send start or stop to puppet
 #Author: Theodore Knab
-#date: 09/14/2020
+#date: 01/07/2021
+
+
 
 if [ "$#" -ne 1 ]; then
     echo "error ... You must enter exactly 1 command line arguments"
@@ -13,12 +15,24 @@ fi
 echo  "results: $0 $1"
 
 function services () {
-   puppet resource service pe-postgresql ensure=$status
-   puppet resource service pe-puppetdb ensure=$status
-   puppet resource service pe-orchestration-services ensure=$status
-   puppet resource service pe-console-services ensure=$status
-   puppet resource service puppet ensure=$status
-   puppet resource service pe-nginx ensure=$status
+
+   puppet_server="pe-puppetserver pe-nginx pe-console-services pe-orchestration-services pe-puppetdb  pe-postgresql" #services
+   puppet_client="pxp-agent puppet"
+
+   echo "verify service service is $status"
+   for myservice in $puppet_server
+     do
+       echo "puppet resource service $myservice ensure=$status"
+       puppet resource service $myservice ensure=$status
+     done
+
+   echo "verify client services are $status"
+   for myservice in $puppet_client
+     do
+       echo "puppet resource service $myservice ensure=$status"
+       puppet resource service $myservice ensure=$status
+     done
+
 }
 
 if [[ $1 =~ ^start ]];then
@@ -32,4 +46,3 @@ if [[ $1 =~ ^stop ]]; then
   status="stopped"
   services
 fi
-
