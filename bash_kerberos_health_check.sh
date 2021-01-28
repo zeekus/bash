@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 #filename: kerberos_health_checker.sh.
 #description: make sure kerbose is still functional on a Linux host.
 

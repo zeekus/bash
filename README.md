@@ -16,7 +16,7 @@ Most of it is just for fun.
 <a href="https://github.com/zeekus/bash/blob/master/./aws_ec2_set_backup_tag_insance_only.sh"> ./aws_ec2_set_backup_tag_insance_only.sh </a>   |   set backup tags on intances that are missing them. | #!/usr/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/./backup_home_dirs.sh"> ./backup_home_dirs.sh </a>   |   backups up all the home directories. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/./bash_aws_query_ec2_api.sh"> ./bash_aws_query_ec2_api.sh </a>   |   queries the AWS EC2 api and return desired data | #!/bin/bash 
-<a href="https://github.com/zeekus/bash/blob/master/./bash_kerberos_health_check.sh"> ./bash_kerberos_health_check.sh </a>   |   make sure kerbose is still functional on a Linux host. | #!/usr/bin/bash 
+<a href="https://github.com/zeekus/bash/blob/master/./bash_kerberos_health_check.sh"> ./bash_kerberos_health_check.sh </a>   |   make sure kerbose is still functional on a Linux host. | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/./bash_prompt.bash"> ./bash_prompt.bash </a>   |   request Y to continue | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/./bash_restart_varnish_on_failure.sh"> ./bash_restart_varnish_on_failure.sh </a>   |   restart_varnish on fail | #!/bin/bash 
 <a href="https://github.com/zeekus/bash/blob/master/./clone_git_repos.bash"> ./clone_git_repos.bash </a>   |   sync all known repos to aws s3 | #!/bin/bash 
