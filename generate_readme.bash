@@ -26,7 +26,8 @@ generate_readme() {
 
 }
 
-filelist=$(ls)
+#filelist=$(ls)
+filelist=$(find -type f -iname '*sh')
 generate_readme #generate header file
 
 for myfile in $filelist
