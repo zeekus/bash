@@ -1,4 +1,7 @@
 #!/bin/bash
+#filename: aws_cli_route53_helper.sh
+#description: used for setting up Route53 DNS entries, hostname, and hosts file on a autoscaling Linux host.
+#requirements: awscli and cloud-init
 #
 # This script figures out a hostname based on the value in the role file.
 # E.g, "someapp_webserver" would result in the hostname someapp-webserver-xxx
@@ -34,7 +37,7 @@ mydomain=us-east.aws.annapolislinux.org
 my_aws_region=us-east-1
 myhost="" #hostname we will use for setting up new Route53 entry
 limit=15 #range of hosts to check ( 15 = 0 ... 15, 10 = 0 ... 10)
-log_prefix="r53dns_script.sh:" 
+log_prefix="route53_helper:" 
 
 
 # COMMANDS
