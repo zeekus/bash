@@ -19,7 +19,7 @@ s3_bucket="puppet-backups/$myhost/"
 #get the last backup filename from the backup log
 backup_file_name=$(cat /var/log/puppetlabs/pe-backup-tools/backup.log | tail -1| sed -e s/.*filename:\ //g | sed -e s/\)$//g)
 
-if [[ -x $backup_file_name ]];then
+if [[ -e $backup_file_name ]];then
   if [ $debug == 1 ] ; then
     mycmd="aws s3 mv $backup_file_name s3://$my_s3_bucket/puppet/$myhost/ --dryrun"
     logger "running $mycmd"
