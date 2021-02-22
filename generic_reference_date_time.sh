@@ -11,15 +11,25 @@ echo the current date is $current_date
 date -d  yesterday +%b" "%-d #note minus removes 0 or space 
 grep -i "$(date -d yesterday +%b"  "%-d)" /var/log/messages #to view log entries from yesterday
 
+#60days from a specific day
+date -d "2020-12-29 +60 days"
+#Output: Sat Feb 27 00:00:00 EST 2021
+
 
 #for apache logs:
 date +%m_%d_%Y_%H%M
+#Output: 02_22_2020_0041
 
 #find time 6 hours from now
 date --date "+$(( 6 * 60 )) minutes" +"%D %l:%M:%S"
+#output 02/22/20  00:43:07
 
 #find time 3 weeks from  today
 date -d 'now + 3 weeks' 
+
+#find time 3 weeks from Christmas
+date -d "2021-12-25 + 3 weeks"
+#Output: Sat Jan 15 00:00:00 EST 2022
 
 #fine date 147 days ago
 date -d 'now - 147 days' 
