@@ -22,4 +22,7 @@ sudo rsync -avxP --rsync-path="sudo rsync" -e "ssh -i /home/centos/.ssh/magical_
 #full home dir
 sudo rsync -avxP --rsync-path="sudo rsync" -e "ssh -i /home/centos/.ssh/magical_key.pem" /home/zeekus/ centos@192.168.1.100:/home/zeekus/ --dry-run
 
+#full home with 2GB limit on size of files
+sudo rsync -avxP --rsync-path="sudo rsync" --max-size=2G -e "ssh -i /home/centos/.ssh/magical_key.pem" /home/sam/ centos@192.168.1.100:/home/sam/
+
 
