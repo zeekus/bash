@@ -2,6 +2,10 @@
 #description: date time commands and thier syntax
 #filename: generic_reference_date_time.sh
 
+###############################
+# Time zone examples
+###############################
+
 #print date/time with different timezone
 TZ='America/New_York'; current_date=$(date)
 echo the current date is $current_date
@@ -9,6 +13,10 @@ echo the current date is $current_date
 
 #LA TIME
 TZ='America/Los_Angeles' date
+
+#################################
+#LOGGING Examples
+#################################
 
 #for apache logs:
 date +%m_%d_%Y_%H%M
@@ -25,6 +33,62 @@ echo $yesterday
 echo "yesterday in shell format for document home dirs CM/ECF"
 yesterday=`date +%Y%m%d -d -yesterday`
 echo $yesterday
+
+#################################
+#date now 
+#################################
+
+date -d now
+
+
+#################################
+#Display current week
+#################################
+
+echo "Find current: Week number"
+#echo Week number: 33 Year: 10
+date +"Week number: %V Year: %y"
+
+#################################
+#Display with common English
+#################################
+
+echo "today"
+#Wed Aug 18 16:47:32 EDT 2010
+date -d today
+
+echo "yesterday"
+#Tue Aug 17 16:47:33 EDT 2010
+date -d yesterday
+
+echo "tomorrow"
+#Thu Aug 19 16:46:34 EDT 2010
+date -d tomorrow
+
+echo "sunday"
+#Sun Aug 22 00:00:00 EDT 2010
+date -d sunday
+
+echo "last Sunday"
+#Sun Aug 15 00:00:00 EDT 2010
+date -d last-sunday
+
+echo "next day"
+date -d next-day
+
+echo "next month"
+date -d next-month
+
+echo "next year"
+date -d next-year
+
+echo "last year"
+date -d last-year
+
+
+#################################
+#Future date Examples
+#################################
 
 #60days from a specific day
 date -d "2020-12-29 +60 days"
@@ -68,34 +132,6 @@ date -d 'now + 30 days'
 #time in 30 years
 date -d 'now + 30 years'
 
-echo "Find current: Week number"
-#echo Week number: 33 Year: 10
-date +"Week number: %V Year: %y"
-
-echo "now"
-#echo Wed Aug 18 16:47:31 EDT 2010
-date -d now
-
-echo "today"
-#Wed Aug 18 16:47:32 EDT 2010
-date -d today
-
-echo "yesterday"
-#Tue Aug 17 16:47:33 EDT 2010
-date -d yesterday
-
-echo "tomorrow"
-#Thu Aug 19 16:46:34 EDT 2010
-date -d tomorrow
-
-echo "sunday"
-#Sun Aug 22 00:00:00 EDT 2010
-date -d sunday
-
-echo "last Sunday"
-#Sun Aug 15 00:00:00 EDT 2010
-date -d last-sunday
-
 echo "7000 days from 1999-12-28"
 echo $((($(date +%s)-$(date +%s --date "1999-12-28"))/(3600*24))) days
 
@@ -105,7 +141,3 @@ echo $((($(date +%s --date "16:30")-$(date +%s))/(60))) min
 
 #6 hours
 echo $((($(date +%s --date "16:30")-$(date +%s))/(60*60))) hours
-
-
-
-
