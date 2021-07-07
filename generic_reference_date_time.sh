@@ -16,6 +16,16 @@ date -d "2020-12-29 +60 days"
 #Output: Sat Feb 27 00:00:00 EST 2021
 
 
+#start time: Wed Jul  7 08:35:06 EDT 2021 hours until future date
+echo $((($(date +%s --date "July 14 2021")-$(date +%s))/(60*60))) hours
+#Output: 159 hours
+
+#days until future date
+echo $((($(date +%s --date "July 14 2021")-$(date +%s))/(60*60*24))) days
+#Output: 6 days
+
+
+
 #for apache logs:
 date +%m_%d_%Y_%H%M
 #Output: 02_22_2020_0041
