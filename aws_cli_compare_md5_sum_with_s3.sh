@@ -1,3 +1,7 @@
+#!/bin/bash
+#filename: aws_cli_compare_md5sum_with_s3.sh
+#description: do a compare betteen local files and files on s3. Update if needed. 
+
 #get cleaned up json from aws cli
 #getting filename, size, and md5sum
 buck="sample-cve" #bucket
