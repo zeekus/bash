@@ -6,12 +6,15 @@
 #description: fix some binary locations after slurm from yum messes up the slurm daemon on pcluster.
 #######################################
 
-binaries=$(ls /opt/slurm/bin/)
+binaries=$(ls /opt/slurm/bin/) #get a list of the slurm binaries
 
-for i in $binaries
+#step through the list of binaries
+for i in $binaries 
 do
-   binary="/usr/bin/$i"
+   binary="/usr/bin/$i" #binary file name
 
+   #test to make sure the new binary file exists
+   #slurm from yum puts the binaries in /usr/bin/srun for example.  
    if test -f "$binary"; then
       echo removing $binary
       rm $binary
