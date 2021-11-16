@@ -117,6 +117,10 @@ date -d 'now + 3 weeks'
 date -d "2021-12-25 + 3 weeks"
 #Output: Sat Jan 15 00:00:00 EST 2022
 
+#find days until Christmas
+echo $((($(date +%s --date "07:00:00 Dec 25 2021")-$(date +%s))/(60*60*24))) day
+#Output: 38 days
+
 #find date 147 days ago
 date -d 'now - 147 days' 
 
