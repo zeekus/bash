@@ -110,6 +110,10 @@ date --date "+$(( 6 * 60 )) minutes" +"%D %l:%M:%S"
 date -d "+6 hours"
 #output 02/22/20  00:43:07
 
+#find time from a specific time
+date -d "Nov 16 2021 07:00:00 AM +7 hours"
+Tue Nov 16 14:00:00 EST 2021
+
 #find time 3 weeks from  today
 date -d 'now + 3 weeks' 
 
