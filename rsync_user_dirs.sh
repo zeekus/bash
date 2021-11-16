@@ -2,7 +2,7 @@
 #file: rsync_user_dirs.sh
 #description: get a list of users with group 1002 and create the rsync command to sync over all the data
 
-list=$(awk -F: {'print $0'} /etc/passwd | grep -i :1002) #common user group is 1002
+list=$(grep -i :1002 /etc/passwd) #common user group is 1002
 
 echo "#start of commands"
 
