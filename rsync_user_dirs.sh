@@ -22,7 +22,7 @@ fi
 for line in $list
 do
    mydir=$(echo $line | awk -F: {'print $6'} )
-   sync_command="sudo rsync -avxP --rsync-path=\"sudo rsync\" -e \"ssh -i $ssh_key_name\" $mydir centos@$destination_ip:$mydir"
+   sync_command="sudo rsync -avxP --rsync-path=\"sudo rsync\" -e \"ssh -i $ssh_key_name\" $mydir/ centos@$destination_ip:$mydir"
    echo "appending: $sync_command"
    echo $sync_command >> $run_file
 done
