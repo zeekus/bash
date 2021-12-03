@@ -21,13 +21,13 @@ do
   ln -s /opt/slurm/lib/slurm/$file /usr/lib64/slurm/$file
 done
 
-#put the configs in a place sview can find them
-ln -s /opt/slurm/etc/slurm.conf /etc/slurm/slurm.conf
+
 
 #remove if empty dir
 if [ -e /etc/slurm ]; then 
   rmdir /etc/slurm
 fi 
 
+#put the configs in a place sview can find them
 #create symbolic link so sview can find the configs
 ln -s /opt/slurm/etc /etc/slurm
