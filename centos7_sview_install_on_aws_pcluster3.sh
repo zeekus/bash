@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: centos7_sview_install_on_aws-pcluster3.sh
+#filename: centos7_sview_install_on_aws_pcluster3.sh
 #description: allows user to install sview on a aws-parallelcluster as a no dep
 #tested with Centos7 on aws-pcluster3
 #author: Theodore Knab
