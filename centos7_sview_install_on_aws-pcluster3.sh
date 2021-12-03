@@ -1,6 +1,7 @@
 #!/bin/bash
-#filename: fix_links_for_sview.sh
+#filename: centos7_sview_install_on_aws-pcluster3.sh
 #description: allows user to install sview on a aws-parallelcluster as a no dep
+#tested with Centos7 on aws-pcluster3
 #author: Theodore Knab
 #date: 12/3/21
 #Copyright (C) 2007 Free Software Foundation, Inc
@@ -21,6 +22,8 @@ do
   ln -s /opt/slurm/lib/slurm/$file /usr/lib64/slurm/$file
 done
 
+#one more library needed for sview to run
+ln -s /opt/slurm/lib/slurm/libslurmfull.so /usr/lib64/libslurmfull-20.11.8.so
 
 
 #remove if empty dir
