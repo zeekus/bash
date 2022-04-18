@@ -149,3 +149,7 @@ echo $((($(date +%s --date "16:30")-$(date +%s))/(60))) min
 
 #6 hours
 echo $((($(date +%s --date "16:30")-$(date +%s))/(60*60))) hours
+
+#date from a specific time
+date -d '00:00:00 May 14 1905 + 84 years + 30 days'
+#result Tue Jun 13 00:00:00 EDT 1989
