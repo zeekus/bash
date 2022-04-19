@@ -140,16 +140,24 @@ date -d 'now + 30 days'
 #time in 30 years
 date -d 'now + 30 years'
 
-echo "7000 days from 1999-12-28"
+echo "days that passed since 1999-12-28"
 echo $((($(date +%s)-$(date +%s --date "1999-12-28"))/(3600*24))) days
 
-echo "mins from 16:30"
+echo "years that passed since 1999-12-28"
+echo $((($(date +%s)-$(date +%s --date "1999-12-28"))/(3600*24*365))) years
+
+echo "mins from 16:30 today"
 #415 min
 echo $((($(date +%s --date "16:30")-$(date +%s))/(60))) min
 
-#6 hours
+#Hours until a specific tme
 echo $((($(date +%s --date "16:30")-$(date +%s))/(60*60))) hours
 
 #date from a specific time
 date -d '00:00:00 May 14 1905 + 84 years + 30 days'
 #result Tue Jun 13 00:00:00 EDT 1989
+
+#day 1000 years ago
+date -d 'now -1000 years'
+#result Thu Apr 18 07:42:10 LMT 1022
+
