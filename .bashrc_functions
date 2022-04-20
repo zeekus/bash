@@ -104,3 +104,12 @@ top_20_hitters_by_hour () {
      fi
      done
 }
+
+#kill off x2go processes by the user logged in
+kill_x2go() {
+  process_list=$(ps aux | grep -i x2go | grep $USER| grep -v grep | awk {'print $2'})
+  for process in $process_list
+  do
+    kill -9 $process
+  done
+}
