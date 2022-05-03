@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: aws_convert_an_ec2_image_to_a_pcluster_image.sh
+#filename: aws_convert_ec2_image_to_pcluster_image.sh
 #description: ec2 and pcluster use seperate environments. A conversion is needed.
 #The images files from ec2 need to move to the pcluster accessible stack.
 
@@ -18,9 +18,15 @@ EOL
   echo "  InstanceType: c4.8xlarge" >> $my_output_file
 }
 
+version=$(pcluster version)
+if [[ $version =~ 2 ]]; then
+  echo "run this manually pcluster 2: python3 -m virtualenv ~/apc-ve"
+  exit
+fi
 latest_image=$(aws ec2 describe-images --owner self --output json --filters Name="name",Values="hpc-ready-os*" --query 'sort_by(Images, &CreationDate)[*].[ImageId]' --output text | tail -1)
 generate_a_yaml_file
 
 echo "move image to pcluster stack"
-mydate=$(date +%m_%d_%Y)
-pcluster build-image --image-id hpc_$mydate --image-configuration $my_output_file
+mydate=$(date +%m%d%Y)
+
+pcluster build-image --image-id hpc$mydate --image-configuration $my_output_file
