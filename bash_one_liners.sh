@@ -5,3 +5,12 @@
 du -ah -t 1G /home | sort -r -n  | head -100 
 
 
+#find disk space on each user in the home dir
+find /home -maxdepth 1 -exec du -hs {} ';'
+
+
+
+
+
+
+
