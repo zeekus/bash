@@ -5,5 +5,5 @@ list=$(aws ec2 describe-instances --filters Name=platform,Values=windows --query
 myregion="us-east-1"
 for host in list
 do 
-  aws ec2 start-instance --region $myregion --instance-id $host
+  aws ec2 start-instances --region $myregion --instance-id $host
 done
