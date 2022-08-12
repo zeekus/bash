@@ -113,3 +113,8 @@ kill_x2go() {
     kill -9 $process
   done
 }
+
+
+#java options to disable rendering for macs
+JAVA_OPTS="-Dsun.java2d.xrender=false"
+export JAVA_OPTS="-Dsun.java2d.xrender=false"
