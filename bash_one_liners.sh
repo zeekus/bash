@@ -16,8 +16,10 @@ rpm -qa
 #get the yum repos in use
 yum repolist
 
-
-
+#install all rpms from a textfile
+cat textfile | xargs yum -y install
+#or
+yum -y install $(cat file_name)
 
 
 
