@@ -1,6 +1,6 @@
 #!/bin/bash
 #create_icmptypes for firewalld
-#filename: create_icmptype.sh
+#filename: bash_icmp_timereply_fix.sh
 #goal Disable ICMP timestamp responses on Linux
 #why we need this ? - The easiest and most effective solution is to configure your firewall to block incoming and outgoing ICMP packets with ICMP types 13 (timestamp request) and 14 (timestamp response).
 
