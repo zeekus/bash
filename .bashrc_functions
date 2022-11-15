@@ -114,6 +114,17 @@ kill_x2go() {
   done
 }
 
+list_yum_from_yesterday(){
+  if [[ -e /usr/bin/yum ]]; then
+    yesterday=$(date -d yesterday +%b\ %d)
+    
+    #get the updates applied yesterday and parse the ouput to remove everything up to the ":" and remove any spaces
+    grep ^"$yesterday" /var/log/yum.log| sed -e s/.*://g | sed -e s/\ //g
+  else
+    echo $yesterday is yesterday
+    echo "Error: We don't have yum on this system."
+  fi
+}
 
 #java options to disable rendering for macs
 JAVA_OPTS="-Dsun.java2d.xrender=false"
