@@ -35,7 +35,7 @@ if [ "$#" -gt 0 ]; then
    users=${args}
 else
  #users seperated by a space
- users="nrpe clamupdate chrony nagios unbound nfsnobody centos toor jmassey kasplen sals ted.knab lxd puppet"
+ users="nrpe clamupdate chrony nagios unbound nfsnobody centos lxd puppet"
 fi
 
 warning_countdown
