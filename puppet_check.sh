@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if puppet agent is running
-if ps auxww | grep -i puppet | grep -i agent > /dev/null; then
+if ps auxww | grep -i "puppet agent"| grep -v grep  > /dev/null; then
     echo "Puppet agent is already running"
 else
     # Start puppet agent
