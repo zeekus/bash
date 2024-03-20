@@ -4,20 +4,18 @@
 #goal Disable ICMP timestamp responses on Linux
 #why we need this ? - The easiest and most effective solution is to configure your firewall to block incoming and outgoing ICMP packets with ICMP types 13 (timestamp request) and 14 (timestamp response).
 
-
-#create directory /etc/firewall/icmptypes if missing
-if [[ ! -e /etc/firewalld/icmptypes ]]; then
-   echo "creating /etc/firewalld/icmptypes"
+# Create directory /etc/firewalld/icmptypes if missing
+if [[ ! -d /etc/firewalld/icmptypes ]]; then
+   echo "Creating /etc/firewalld/icmptypes directory"
    mkdir -p /etc/firewalld/icmptypes
 else
-  echo "ok directory /etc/firewalld/icmptypes exists"
+  echo "Directory /etc/firewalld/icmptypes already exists"
 fi
 
-
-#create file: /etc/firewall/icmptypes/timestamp-request.xml if missing
+# Create file: /etc/firewalld/icmptypes/timestamp-request.xml if missing
 if [[ ! -e /etc/firewalld/icmptypes/timestamp-request.xml ]]; then
-echo "creating /etc/firewalld/icmptypes/timestamp-request.xml"
-cat /etc/firewalld/icmptypes/timestamp-request.xml<<EOF
+    echo "Creating /etc/firewalld/icmptypes/timestamp-request.xml"
+    cat <<EOF > /etc/firewalld/icmptypes/timestamp-request.xml
 <?xml version="1.0" encoding="utf-8"?>
 <icmptype>
   <short>Timestamp Request</short>
@@ -26,16 +24,16 @@ cat /etc/firewalld/icmptypes/timestamp-request.xml<<EOF
   <destination ipv6="no"/>
 </icmptype>
 EOF
-firewall-cmd --reload
-firewall-cmd --add-icmp-block=timestamp-request
+    firewall-cmd --reload
+    firewall-cmd --add-icmp-block=timestamp-request
 else
-  echo "ok file /etc/firewalld/icmptypes/timestamp-request.xml exists"
+    echo "File /etc/firewalld/icmptypes/timestamp-request.xml already exists"
 fi
 
-#create file: /etc/firewall/icmptypes/timestamp-reply.xml if missing
+# Create file: /etc/firewalld/icmptypes/timestamp-reply.xml if missing
 if [[ ! -e /etc/firewalld/icmptypes/timestamp-reply.xml ]]; then
-echo "/etc/firewalld/icmptypes/timestamp-reply.xml"
-cat /etc/firewalld/icmptypes/timestamp-reply.xml<<EOF
+    echo "Creating /etc/firewalld/icmptypes/timestamp-reply.xml"
+    cat <<EOF > /etc/firewalld/icmptypes/timestamp-reply.xml
 <?xml version="1.0" encoding="utf-8"?>
 <icmptype>
   <short>Timestamp Reply</short>
@@ -44,10 +42,8 @@ cat /etc/firewalld/icmptypes/timestamp-reply.xml<<EOF
   <destination ipv6="no"/>
 </icmptype>
 EOF
-firewall-cmd --reload
-firewall-cmd --add-icmp-block=timestamp-reply
+    firewall-cmd --reload
+    firewall-cmd --add-icmp-block=timestamp-reply
 else
-  echo "ok file /etc/firewalld/icmptypes/timestamp-reply.xml exists"
+    echo "File /etc/firewalld/icmptypes/timestamp-reply.xml already exists"
 fi
-
-
