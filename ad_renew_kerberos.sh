@@ -6,13 +6,13 @@ mypass="mypass"
 myrealm="EXAMPLE.NET"
 myuser="myuser"
 domainuser=$myuser@$myrealm
-domain=$myrealm| tr '[:upper:]' '[:lower:]'
+domain=$($myrealm| tr '[:upper:]' '[:lower:]')
 domainserver="myhost.$domain"
 echo "user: $domainuser"
 
 set_time_to_windows() {
   echo "sync time with $domainserver"
-  net time set -S $domainserver
+  net time set -S "$domainserver"
 }
 
 kinit_reinitialize() {
