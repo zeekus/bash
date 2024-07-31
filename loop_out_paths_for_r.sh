@@ -63,7 +63,7 @@ done
 
 # Add LD_LIBRARY_PATH setting
 echo "Sys.setenv(LD_LIBRARY_PATH = paste("
-for package in gdal proj; do
+for package in gdal proj sqlite; do
     location=$(spack location -i $package 2>/dev/null)
     if [ -n "$location" ]; then
         libdir=$(find "$location" -type d -name 'lib64' 2>/dev/null)
