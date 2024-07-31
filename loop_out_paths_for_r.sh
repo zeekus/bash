@@ -39,8 +39,8 @@ for package in $mypackages; do
 		echo "Sys.setenv(PROJ_ROOT=\"$location\")"
                 echo "Sys.setenv(PROJ_BIN=\"$bindir\")"
                 echo "Sys.setenv(PROJ_INCLUDE=\"$includedir\")"
-		echo "Sys.setenv(CFLAGS = paste(\"-I${includedir}\", Sys.getenv(\"CFLAGS\")))"
-		echo "Sys.setenv(LDFLAGS = paste(\"-L${location}/lib64\", Sys.getenv(\"LDFLAGS\")))"
+		echo "Sys.setenv(CFLAGS = paste0(\"-I${includedir}\", Sys.getenv(\"CFLAGS\")))"
+		echo "Sys.setenv(LDFLAGS = paste0(\"-L${location}/lib64\", Sys.getenv(\"LDFLAGS\")))"
                 ;;
             sqlite)
                 sqlite3_lib=$(find "$libdir" -name "libsqlite3.so*" | head -n 1)
