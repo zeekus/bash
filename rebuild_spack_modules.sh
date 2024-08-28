@@ -4,8 +4,10 @@
 
 environments=$(spack env list)
 
-for env in "${environments[@]}"
+
+for env in $environments
 do
+    echo $env
     echo "Refreshing modules for $env"
     spack -e $env module tcl refresh --delete-tree -y
     spack -e $env module lmod refresh --delete-tree -y
