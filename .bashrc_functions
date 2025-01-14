@@ -1,3 +1,5 @@
+TZ='America/New_York'; export TZ
+
 # User specific aliases and functions
 count_http () {
    ps aux| grep -i http| grep -v ps | wc -l
@@ -34,12 +36,40 @@ find_most_active_time_waits_on_webports() {
 }           
 
 
+
 backup_root_history () {
    mydate=`date +%d_%b_%Y_%H%M`
    sudo cp /root/.bash_history ~/root_history_$mydate
 }
 
-load_ssh_keys_into_agent() {
+load_rsa_ssh_key_into_agent() {
+  # Debug: Ensure we're using the correct home directory
+  ssh_path="${HOME}/.ssh"
+
+  # Specifically look for id_rsa, excluding .pub files
+  ssh_private_keys=$(find "$ssh_path" -type f -name "id_rsa" ! -name "*.pub")
+
+  # Check if any keys were found
+  if [[ -z "$ssh_private_keys" ]]; then
+    echo "No id_rsa key found in $ssh_path"
+    return 1
+  fi
+
+  # Start SSH agent if not already running
+  eval "$(ssh-agent -s)" &> /dev/null
+
+   # Load the specific id_rsa key
+   for key in $ssh_private_keys; do
+     echo "Loading SSH key: $key"
+     ssh-add "$key" &> /dev/null
+   done
+
+   # Verify key addition
+   ssh-add -l
+}
+
+
+load_all_ssh_keys_into_agent() {
   echo "start ssh agent"
   eval `ssh-agent -s`
   echo "loading ssh keys"
@@ -54,15 +84,6 @@ load_ssh_keys_into_agent() {
          ssh-add $ssh_path/$filename &> /dev/null
        done
 }
-
-
-#load_ssh_agent() {
-#  ssh-add &>/dev/null || eval `ssh-agent` &>/dev/null  # start ssh-agent if not present
-#  [ $? -eq 0 ] && {                                     # ssh-agent has started
-#   ssh-add ~/.ssh/id_dsa &>/dev/null        # Load key 1
-#   ssh-add ~/.ssh/id_rsa &>/dev/null        # Load key 2
-# }
-#}
 
 top_20_hiters_from_apache() {
  echo "top 20 hitters from logs today `date +%d/%b/%Y`"
