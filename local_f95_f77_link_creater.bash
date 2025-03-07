@@ -1,6 +1,7 @@
 #!/bin/bash
 #filename: local_f95_f77_link_creater.bash
 #Description: This sets up local symlinks for f95 and f77. 
+#Author: Theodore Knab 
 
 # Instructions for Users:
 # ------------------------
