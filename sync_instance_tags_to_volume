@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+# ------------------------------------------------------------
+# Sync EC2 instance tags → attached EBS volumes
+#   • Targets instances with tag Kernel=Linux
+#   • Copies all non-reserved tags
+#   • Optional dry-run mode
+# ------------------------------------------------------------
+
+set -euo pipefail   # strict mode: fail fast, treat unset vars as error
+
+# ---------- CONFIG ----------
+DRY_RUN=false       # set to true to only echo commands (no API calls)
+REGION="${AWS_REGION:-$(aws configure get region)}"  # fallback to configured region
+# -----------------------------------------------------------
+
+log()   { echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')] $*"; }
+error() { echo "[ERROR] $*" >&2; exit 1; }
+
+# ----------------------------------------------------------------
+# 1. Get instances that match the tag filter
+# ----------------------------------------------------------------
+log "Fetching instances with tag Kernel=Linux in region $REGION ..."
+INSTANCES_JSON=$(aws ec2 describe-instances \
+    --region "$REGION" \
+    --filters "Name=tag:kernel,Values=Linux" "Name=instance-state-name,Values=running,stopped" \
+    --query 'Reservations[].Instances[].{
+                InstanceId: InstanceId,
+                Tags: Tags,
+                BlockDeviceMappings: BlockDeviceMappings
+             }' \
+    --output json) || error "Failed to describe instances"
+
+# If jq returns nothing, exit early
+[[ -z "$INSTANCES_JSON" || "$INSTANCES_JSON" == "[]" ]] && { log "No matching instances found."; exit 0; }
+
+# ----------------------------------------------------------------
+# 2. Loop over each instance (jq-driven)
+# ----------------------------------------------------------------
+jq -c '.[]' <<<"$INSTANCES_JSON" | while read -r inst; do
+    INSTANCE_ID=$(jq -r '.InstanceId' <<<"$inst")
+    log "Processing instance $INSTANCE_ID"
+
+    # ---- extract tags (skip aws:* reserved keys) ----
+    TAGS_FOR_CLI=$(jq -r '
+        .Tags[]
+        | select(.Key | startswith("aws:") | not)
+        | "Key=\(.Key),Value=\(.Value)"
+    ' <<<"$inst" | paste -sd' ' -)  # space-separated list
+
+    [[ -z "$TAGS_FOR_CLI" ]] && { log "  No user tags to copy – skipping."; continue; }
+
+    # ---- extract attached volume IDs ----
+    VOLUME_IDS=$(jq -r '.BlockDeviceMappings[].Ebs.VolumeId' <<<"$inst" | tr '\n' ' ')
+
+    [[ -z "$VOLUME_IDS" ]] && { log "  No volumes attached – skipping."; continue; }
+
+    # ---- apply tags to each volume ----
+    for VOL in $VOLUME_IDS; do
+        log "  Tagging volume $VOL with: $TAGS_FOR_CLI"
+        if $DRY_RUN; then
+            echo "    [DRY-RUN] aws ec2 create-tags --region $REGION --resources $VOL --tags $TAGS_FOR_CLI"
+        else
+            aws ec2 create-tags \
+                --region "$REGION" \
+                --resources "$VOL" \
+                --tags $TAGS_FOR_CLI > /dev/null 2>&1 || \
+                log "    Warning: Failed to tag volume $VOL (maybe permission or already exists)"
+        fi
+    done
+done
+
+log "Sync completed."
